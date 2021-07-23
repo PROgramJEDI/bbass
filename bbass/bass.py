@@ -1,7 +1,7 @@
 import os
 import re
 import asyncio 
-import .helpers
+import bbass.helpers
 import chrome_bookmarks as cbook
 
 
