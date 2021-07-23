@@ -16,7 +16,7 @@ class Song:
 	def name(self):
 		p1 = re.compile('- YouTube')
 		p2 = re.compile(r'\(+\d+\)')
-		self._name = helpers.dispose(helpers.reduce_spaces(self._name), p1, p2)
+		self._name = bbass.helpers.dispose(bbass.helpers.reduce_spaces(self._name), p1, p2)
 		return self._name
 	
 	@property
@@ -43,7 +43,7 @@ class Song:
 
 	async def download(self, path=None, force=False, **kwargs):
 		self._path = path
-		if helpers.present(self.path, self.name + '.mp3'):
+		if bbass.helpers.present(self.path, self.name + '.mp3'):
 			return None
 		await asyncio.create_subprocess_shell(self.command)
 
